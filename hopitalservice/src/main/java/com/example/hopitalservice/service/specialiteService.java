@@ -13,13 +13,13 @@ import java.util.List;
 public class specialiteService {
     private final specialiteRepository repo;
 
-    public List<Specialite> getAllSpecialites() {
+    public List<Specialite> getAll() {
         return repo.findAll();
     }
-    private Specialite findbyid(int id) {
+    public Specialite findbyid(int id) {
         return repo.findById(id).get();
     }
-    public List<medcin> gatmedcin(int id) {
+    public List<medcin> getmedcins(int id) {
         return findbyid(id).getMedcins() ; 
     }
 }

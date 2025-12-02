@@ -1,5 +1,6 @@
 package com.example.hopitalservice.service;
 
+import com.example.hopitalservice.dto.addrendezevousrequest;
 import com.example.hopitalservice.model.rendezVous;
 import com.example.hopitalservice.respository.rendeVousRepository;
 import lombok.AllArgsConstructor;
@@ -9,7 +10,7 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
-public class rendeezVousService {
+public class rendezVousService {
     private final rendeVousRepository repo  ;
     private final medcinService medcinService ;
     public List<rendezVous>  gatall()
@@ -20,9 +21,14 @@ public class rendeezVousService {
     {
         return  medcinService.getMedcin(medcin_id).getRendezVous();
     }
-    public int add()
+    public int add(addrendezevousrequest addrendezevousrequest)
     {
-
+          rendezVous rendezVous = new rendezVous();
+          rendezVous.setMedcin( medcinService.getMedcin(addrendezevousrequest.getMedcin_id()) );
+          rendezVous.setPatient_id(addrendezevousrequest.getRendezpatient_id());
+          rendezVous.setRendezVous_dateheure(addrendezevousrequest.getRendezevous_timestamp());
+          repo.save(rendezVous);
+          return rendezVous.getRendezVou_id() ;
     }
 
 

@@ -22,7 +22,7 @@ public class medcinService {
 
 
 
-    private List<rendezVous>  getrendezVous(int medcin_id) {
+    public List<rendezVous>  getrendezVous(int medcin_id) {
         return  getMedcin(medcin_id).getRendezVous();
     }
 

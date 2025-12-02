@@ -1,6 +1,7 @@
 package com.example.hopitalservice.controller;
 
 import com.example.hopitalservice.model.medcin;
+import com.example.hopitalservice.model.rendezVous;
 import com.example.hopitalservice.service.medcinService;
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
@@ -9,10 +10,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/api/hopital/medcin")
 @RequiredArgsConstructor
 public class medcinController {
@@ -24,6 +26,12 @@ public class medcinController {
     @GetMapping("/get/{id}")
     public ResponseEntity<medcin> getMedcinById(@PathVariable int id) {
         return  ResponseEntity.ok(service.getMedcin(id)) ;
+    }
+
+    @GetMapping("/rendezvous/{medcinid}")
+    public ResponseEntity<List<rendezVous>> getMedcin(@PathVariable int medcin_id )
+    {
+     return  ResponseEntity.ok(service.getrendezVous(medcin_id))  ;
     }
 
 
