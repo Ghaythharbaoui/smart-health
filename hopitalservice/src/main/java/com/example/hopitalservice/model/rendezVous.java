@@ -17,10 +17,10 @@ import java.time.LocalDateTime;
 @Data
 public class rendezVous {
     @Id
-    int rendezVou_id   ;
+    int rendezVouId   ;
     @ManyToOne()
     private medcin medcins  ;
-    private int patient_id ;
+    private int patientId ;
     private LocalDateTime   rendezVous_dateheure ;
     @ManyToOne()
     @JoinColumn(name = "medcin_id")

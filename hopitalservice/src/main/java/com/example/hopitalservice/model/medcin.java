@@ -13,9 +13,9 @@ import java.util.List;
 @NoArgsConstructor
 public class medcin {
     @Id
-    private String medcin_id;
-    private String medcin_firstname;
-    private String medcin_lastname;
+    private String medcinId;
+    private String medcinFirstname;
+    private String medcinLastname;
     @ManyToOne
     @JoinColumn(name = "specialite_id")
     private Specialite medcin_specialite    ;

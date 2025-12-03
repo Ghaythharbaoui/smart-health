@@ -15,8 +15,8 @@ import java.util.List;
 @Data
 public class Specialite {
     @Id
-    int specialite_id  ;
-    String specialite_name ;
+    int specialiteIid  ;
+    String specialiteName ;
     @OneToMany
     private List<medcin> medcins   ;
 }
