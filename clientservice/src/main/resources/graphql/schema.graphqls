@@ -1,0 +1,75 @@
+type Allergy {
+    id: ID!
+    name: String
+    type: String
+    severity: String
+}
+
+type Vaccination {
+    id: ID!
+    vaccineName: String
+    vaccinationDate: String
+    doctorId: Int
+    centerName: String
+    notes: String
+}
+
+type MedicalDocument {
+    id: ID!
+    title: String
+    type: String
+    url: String
+    uploadDate: String
+}
+
+type DoctorNote {
+    id: ID!
+    doctorId: Int
+    content: String
+    createdAt: String
+}
+
+type Patient {
+    patientid: ID!
+    patientnumAssurance: Int
+    patienname: String
+    patientaddress: String
+    patientphone: String
+    patientemail: String
+    patientage: Int
+    allergies: [Allergy]
+    Vacinations: [Vaccination]
+    documents: [MedicalDocument]
+    doctorsNotes : [DoctorNote]
+
+}
+
+input addDoctorNoteDto {
+    doctorId : Int
+    content : String
+    createdAt: String
+}
+input addMedicalDocumentDto
+{
+    title:String
+    type:String
+    url:String
+    uploadDate:String
+}
+
+input addVaccinationDto
+{
+    patientId:Int
+    vaccineName:String
+    vaccinationDate:String
+    doctorId:Int
+    centerName:String
+    notes:String
+}
+
+
+type Query {
+    patient(id:ID): Patient
+
+}
+

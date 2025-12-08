@@ -12,11 +12,15 @@
         <module name="assuranceservice" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="book" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="LaboService" options="-parameters" />
       <module name="assuranceservice" options="-parameters" />
+      <module name="book" options="-parameters" />
       <module name="clientservice" options="-parameters" />
       <module name="hopitalservice" options="-parameters" />
     </option>

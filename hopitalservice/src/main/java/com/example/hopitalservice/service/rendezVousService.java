@@ -25,10 +25,10 @@ public class rendezVousService {
     {
           rendezVous rendezVous = new rendezVous();
           rendezVous.setMedcin( medcinService.getMedcin(addrendezevousrequest.getMedcin_id()) );
-          rendezVous.setPatient_id(addrendezevousrequest.getRendezpatient_id());
+          rendezVous.setPatientId(addrendezevousrequest.getRendezpatient_id());
           rendezVous.setRendezVous_dateheure(addrendezevousrequest.getRendezevous_timestamp());
           repo.save(rendezVous);
-          return rendezVous.getRendezVou_id() ;
+          return rendezVous.getRendezVouId() ;
     }
 
 
