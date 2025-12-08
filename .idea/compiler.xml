@@ -8,7 +8,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="LaboService" />
         <module name="hopitalservice" />
+        <module name="RegistreService" />
         <module name="clientservice" />
+        <module name="Api-Getway" />
         <module name="assuranceservice" />
       </profile>
     </annotationProcessing>
@@ -18,7 +20,9 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Api-Getway" options="-parameters" />
       <module name="LaboService" options="-parameters" />
+      <module name="RegistreService" options="-parameters" />
       <module name="assuranceservice" options="-parameters" />
       <module name="book" options="-parameters" />
       <module name="clientservice" options="-parameters" />

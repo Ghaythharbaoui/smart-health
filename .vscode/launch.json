@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "RegistreServiceApplication",
+            "request": "launch",
+            "mainClass": "com.example.RegistreService.RegistreServiceApplication",
+            "projectName": "RegistreService"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-AssuranceserviceApplication<assuranceservice>",
             "request": "launch",
             "cwd": "${workspaceFolder}",

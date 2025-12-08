@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Api-Getway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/LaboService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RegistreService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/assuranceservice/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/book/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/clientservice/src/main/java" charset="UTF-8" />

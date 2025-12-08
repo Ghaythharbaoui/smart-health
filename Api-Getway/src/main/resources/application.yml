@@ -1,0 +1,30 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: order-service
+          uri: lb://HOPITALSERVICE
+          predicates:
+            - Path=/api/hopital/**
+        - id: assurance-service
+          uri: lb://ASSURANCESERVICE
+          predicates:
+            - Path=/services/**
+        - id: client-service
+          uri: lb://CLIENTSERVICE
+          predicates:
+            - Path=/graphiql
+        - id: client-service
+          uri: lb://CLIENTSERVICE
+          predicates:
+            - Path=/graphql
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
