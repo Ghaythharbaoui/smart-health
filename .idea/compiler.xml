@@ -6,21 +6,23 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="LaboService" />
-        <module name="hopitalservice" />
         <module name="RegistreService" />
+        <module name="hopitalservice" />
         <module name="clientservice" />
         <module name="Api-Getway" />
         <module name="assuranceservice" />
+        <module name="Labo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="book" target="17" />
+      <module name="LaboService" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Api-Getway" options="-parameters" />
+      <module name="Labo" options="-parameters" />
       <module name="LaboService" options="-parameters" />
       <module name="RegistreService" options="-parameters" />
       <module name="assuranceservice" options="-parameters" />

@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+option java_package = "com.example.labo.grpc";
+option java_multiple_files = true;
+
+package laboratory;
+
+service LabService {
+  // 1. Déposer une nouvelle demande de test
+  rpc SubmitTestRequest (SubmitRequest) returns (TestResponse) {}
+
+  // 2. Suivre le statut/résultat d'une demande
+  rpc GetTestResult (GetRequest) returns (TestResponse) {}
+
+  // 3. (Optionnel pour le serveur) Mettre à jour le statut
+  rpc UpdateTestStatus (UpdateRequest) returns (TestResponse) {}
+}
+
+// Message pour la soumission d'une demande
+message SubmitRequest {
+  string patient_name = 1;
+  string test_type = 2;
+}
+
+// Message pour récupérer un statut/résultat
+message GetRequest {
+  int64 request_id = 1; // Utilise Long en Java
+}
+
+// Message pour mettre à jour le statut
+message UpdateRequest {
+  int64 request_id = 1;
+  string new_status = 2; // PENDING, IN_PROGRESS, COMPLETED
+  string result_details = 3;
+}
+
+// Message de réponse générique (Statut et Détails du test)
+message TestResponse {
+  int64 request_id = 1;
+  string patient_name = 2;
+  string test_type = 3;
+  string status = 4;
+  string result_details = 5; // Ajout du résultat si COMPLETED
+}
